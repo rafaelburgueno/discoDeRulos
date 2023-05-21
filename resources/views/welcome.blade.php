@@ -20,7 +20,7 @@
         
 
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
+            {{--@if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
@@ -32,7 +32,7 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif--}}
 
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
@@ -43,17 +43,17 @@
 
                 <div class="mt-16">
                     
-                    <div class="flex justify-center">
+                    {{--<div class="flex justify-center">
                         <audio controls id="audio" 
                         src="{{ asset("storage/audios/para_asomar/1/1.ogg") }}"></audio>
-                    </div>
+                    </div>--}}
 
                     <div class="flex justify-center">
                         <h1>Disco de Rulos</h1>
                     </div>
 
 
-                    <div class="flex justify-center">
+                    <div class="flex justify-center mt-4">
                         <button id="btnPlay" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-4 px-6 rounded m-2 text-xl">
                             Play
                         </button>
@@ -83,7 +83,8 @@
                     </div>
 
                     <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) 
+                        Web Audio API
                     </div>
                 </div>
             </div>

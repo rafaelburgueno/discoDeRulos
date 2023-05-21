@@ -1,0 +1,49 @@
+/* creo variables para controlar los colores */
+:root {
+    --gris-muy-oscuro: rgb(31, 38, 31);
+    --verde-brillante: rgb(146, 255, 213);
+    --gris-oscuro: rgb(34, 41, 34);
+    --verde-mate: rgb(26, 204, 136);
+}
+
+
+body {
+    background-color: var(--gris-muy-oscuro);
+    color: var(--verde-brillante);
+}
+.container {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--gris-muy-oscuro);
+    color: var(--verde-brillante);
+    border-radius: 5px;
+}
+.btn {
+    width: 110px;
+    background-color: var(--gris-oscuro);
+    color: var(--verde-brillante);
+    border: 2px solid var(--verde-mate);
+}
+
+
+@keyframes change-color {
+    0% {
+      color:  var(--gris-muy-oscuro);
+    }
+    20% {
+      color:  var(--verde-brillante);
+    }
+    70% {
+        color:  var(--verde-brillante);
+    }
+    80% {
+        color:  var(--gris-muy-oscuro);
+    }
+    100% {
+        color:  var(--gris-muy-oscuro);
+    }
+}
+  
+#cursor-pulsante {
+    animation: change-color 1s infinite;
+}
+  
