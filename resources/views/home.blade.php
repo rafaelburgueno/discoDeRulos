@@ -64,6 +64,13 @@
     const audio_4 = '{{ asset($audios[3]) }}'; 
     const audio_5 = '{{ asset($audios[4]) }}'; 
     const audio_6 = '{{ asset($audios[5]) }}'; 
+    console.log('audios seleccionados:');
+    console.log(audio_1);
+    console.log(audio_2);
+    console.log(audio_3);
+    console.log(audio_4);
+    console.log(audio_5);
+    console.log(audio_6);
 
 
 </script>
