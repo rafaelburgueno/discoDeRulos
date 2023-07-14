@@ -62,7 +62,7 @@ class User extends Authenticatable
 
 
 
-
+    // test con tinker: OK
     // devuelve los proyectos que creó o que administra el usuario
     public function proyectos()
     {

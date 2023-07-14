@@ -20,26 +20,30 @@ class Proyecto extends Model
 
 
 
-
+    // test con tinker: OK
     // devuelve el usuario que creó o que administra el proyecto
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // usando la tabla 'colaboradores' devuelve los user colaboradores del proyecto
-    /*public function colaboradores()
-    {
-        return $this->belongsToMany(User::class, 'colaboradores');
-    }*/
-    // o
+
+
+    // test con tinker: OK
+    //devuelve un array con los usuarios que colaboran en el proyecto sin incluir los registros de la tabla 'colaboradores'
     public function colaboradores()
     {
-        return $this->hasMany(Colaborador::class);
+        //return $this->hasMany(Colaborador::class);
+        return $this->belongsToMany(User::class, 'colaboradors');
     }
 
     
-
+    // test con tinker: OK
+    // devuelve los audios del proyecto
+    public function audios()
+    {
+        return $this->hasMany(Audio::class);
+    }
 
 
 

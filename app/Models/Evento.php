@@ -14,4 +14,16 @@ class Evento extends Model
         'descripcion',
         'marca',
     ];
+
+
+    // test con tinker: OK
+    // devuelve el audio al que pertenece el evento
+    public function audio()
+    {
+        return $this->belongsTo(Audio::class);
+    }
+
+
+
+
 }

@@ -9,6 +9,8 @@ class Colaborador extends Model
 {
     use HasFactory;
 
+    protected $table = 'colaboradors';
+
     protected $fillable = [
         'proyecto_id',
         'user_id',
@@ -22,5 +24,6 @@ class Colaborador extends Model
         return $this->belongsTo(User::class);
     }
 
+    //
 
 }

@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('audio', function (Blueprint $table) {
+        Schema::create('audios', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
+            
             $table->string('nombre', 100);
             $table->string('descripcion')->nullable();
             $table->string('url');
@@ -22,17 +21,18 @@ return new class extends Migration
             $table->string('tipo', 100)->nullable();
             // la propiedad bpm  usa un tipo de dato float
             $table->float('bpm')->nullable();
-
+            
             $table->unsignedBigInteger('proyecto_id')->nullable();
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('set null');
-
+            
             // la propiedad user_id usa un tipo de dato unsignedBigInteger
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
             // la propiedad public usa un tipo de dato boolean
             $table->boolean('public')->default(false);
-
+            
+            $table->timestamps();
 
         });
     }
@@ -42,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('audio');
+        Schema::dropIfExists('audios');
     }
 };

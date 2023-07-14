@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('samples', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
+            
             // la propiedad audio_id hace referencia a un elemento de la tabla audio
             $table->unsignedBigInteger('audio_id')->nullable();
-            $table->foreign('audio_id')->references('id')->on('audio')->onDelete('cascade');
+            $table->foreign('audio_id')->references('id')->on('audios')->onDelete('cascade');
+            
+            $table->double('marca_de_inicio')->nullable();
+            $table->double('marca_de_fin')->nullable();
+            
+            $table->timestamps();
         });
     }
 

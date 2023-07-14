@@ -17,6 +17,15 @@ use App\Http\Controllers\HomeController;
 Route::get('/', HomeController::class)->name('home');
 
 
+
+// ruta para cerrar sesion
+Route::get('/cerrar_sesion', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('cerrar_sesion');
+
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

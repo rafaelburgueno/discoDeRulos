@@ -13,19 +13,19 @@ return new class extends Migration
     {
         Schema::create('proyectos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
+            
             $table->string('nombre');
             $table->string('descripcion')->nullable();
             // la propiedad user_id usa un tipo de dato unsignedBigInteger
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
-
+            
             // la propiedad bpm  usa un tipo de dato float
             $table->float('bpm')->nullable();
             // la propiedad public usa un tipo de dato boolean
             $table->boolean('public')->default(false);
-
+            
+            $table->timestamps();
 
         });
     }

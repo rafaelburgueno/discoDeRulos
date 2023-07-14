@@ -14,4 +14,13 @@ class Sample extends Model
         'marca_de_inicio',
         'marca_de_fin',
     ];
+
+
+    // test con tinker: OK
+    // devuelve el audio al que pertenece el sample
+    public function audio()
+    {
+        return $this->belongsTo(Audio::class);
+    }
+
 }

@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('colaboradors', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
+            
             // la tabla colaborador tiene una relación uno a muchos con la tabla proyecto 
             // la propiedad proyecto_id usa un tipo de dato unsignedBigInteger
             $table->unsignedBigInteger('proyecto_id')->nullable();
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
-
+            
             // la propiedad user_id usa un tipo de dato unsignedBigInteger
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
+            
+            $table->timestamps();
         });
     }
 
