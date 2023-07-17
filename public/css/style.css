@@ -4,7 +4,35 @@
     --verde-brillante: rgb(146, 255, 213);
     --gris-oscuro: rgb(34, 41, 34);
     --verde-mate: rgb(26, 204, 136);
+    --gris: rgb(52, 63, 52);
+    --gris-claro: rgb(104, 126, 104);
 }
+
+.text-gris-muy-oscuro{
+    color: var(--gris-muy-oscuro);
+}
+.text-verde-brillante{
+    color: var(--verde-brillante);
+}
+.text-gris-oscuro{
+    color: var(--gris-oscuro);
+}
+.text-verde-mate{
+    color: var(--verde-mate);
+}
+.bg-gris-muy-oscuro{
+    background-color: var(--gris-muy-oscuro);
+}
+.bg-verde-brillante{
+    background-color: var(--verde-brillante);
+}
+.bg-gris-oscuro{
+    background-color: var(--gris-oscuro);
+}
+.bg-verde-mate{
+    background-color: var(--verde-mate);
+}
+
 
 
 body {

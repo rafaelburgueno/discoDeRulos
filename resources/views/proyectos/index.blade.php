@@ -20,11 +20,11 @@
 </script>
 
 
-<div class="text-center text-white my-4">
+<div class="container text-center text-white my-4">
     <h1 class="text-center pt-2">PROYECTOS</h1>
 </div>
 
-<div class="container bg-white text-dark py-2 rounded">
+<div class="container py-2">
 
 	<div class="pb-3" style="overflow-x: scroll;">
 		<table id="tabla_proyectos" class="display {{--table table-striped table-hover table-sm--}}">
@@ -46,7 +46,7 @@
 			<tbody>
 			
 				@foreach ($proyectos as $proyecto)
-					<tr @if($proyecto->public) style="background-color: var(--verde-brillante);" @endif>
+					<tr @if($proyecto->public) style="background-color: var(--verde-mate); color: var(--gris-muy-oscuro);" @endif>
                         <td>{{ $proyecto->id }}</td>
                         <td>{{ $proyecto->nombre }}</td>
                         <td>{{ $proyecto->descripcion }}</td>
@@ -68,8 +68,8 @@
 						<td>{{ count($proyecto->audios) }}</td>
                         <td>{{ count($proyecto->colaboradores) }}</td>
 						
-                        {{--<td><a href="{{route('proyectos.edit', $proyecto)}}" class="btn btn-sm btn-light ">Editar</a></td>--}}
-                        <td></td>
+                        <td><a href="{{--route('proyectos.edit', $proyecto)--}}" class="btn btn-sm btn-lightt ">Editar</a></td>
+                        
 					</tr>
 				@endforeach
 			</tbody>

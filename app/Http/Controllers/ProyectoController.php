@@ -33,13 +33,13 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([ //TODO: revisar las validaciones porque no funcionan
+        //return $request->all();
+        $request->validate([ //TODO: revisar las validaciones 
             'nombre' => 'required|max:255',
             'descripcion' => 'nullable|max:255',
             'bpm' => 'nullable|numeric',
             //'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ]);
-        //return $request->all();
         
         $proyecto = new Proyecto();
         
@@ -62,31 +62,6 @@ class ProyectoController extends Controller
 
 
         /*
-        $proyecto->slug = Str::slug($request->nombre, '-');
-        $proyecto->tipo = $request->tipo;
-        $proyecto->precio = $request->precio;
-        $proyecto->stock = $request->stock;
-        $proyecto->ingredientes = $request->ingredientes;
-        $proyecto->peso_neto = $request->peso_neto;
-        $proyecto->informacion_nutricional = $request->informacion_nutricional;
-
-        
-
-        if($request->relevancia){
-            $proyecto->relevancia = $request->relevancia;
-        }else{
-            $proyecto->relevancia = 55;
-        }
-
-        if($request->color){
-            $proyecto->color = $request->color;
-        }
-
-        //$proyecto->categorias = $request->categorias;
-
-        $proyecto -> save();
-
-
         //IMAGEN
         //se guarda en la carpeta storage/app/public/proyectos/
         if($request->file('imagen')){
@@ -101,9 +76,9 @@ class ProyectoController extends Controller
                 'url' => $url,
                 'descripcion' => $request->nombre,
                 'relevancia' => 1,
-                'resolucion' => 'no se',
+                'resolucion' => '',
                 'tipo' => 'imagen',
-                'tamano' => 'no se',
+                'tamano' => '',
                 'multimediaable_id' => $proyecto->id,
                 'multimediaable_type' => 'App\Models\proyecto',
                 'activo' => true,

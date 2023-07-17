@@ -58,7 +58,7 @@
     {{--@include('partials.nav')--}}
 
     <!-- mensajes de alerta -->
-    {{--@include('partials.alertas')--}}
+    @include('layouts.alertas')
  
  
     <!-- contenido -->
